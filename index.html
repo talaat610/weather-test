@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Weather Monitor</title>
+    <script>
+      // Tailwind dark mode configuration
+      tailwind.config = {
+        darkMode: 'class', // or 'media'
+        theme: {
+          extend: {
+            animation: {
+              fadeIn: 'fadeIn 0.5s ease-out forwards',
+              fadeInDelay200: 'fadeIn 0.5s ease-out 0.2s forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0, transform: 'translateY(10px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        @apply bg-slate-100 dark:bg-slate-900 transition-colors duration-300;
+      }
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      
+      .text-shadow-md {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .dark .text-shadow-md {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+
+      .fade-enter {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .fade-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+      }
+      .fade-exit {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fade-exit-active {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+      }
+      .slide-up-fade-in {
+        animation: slideUpFadeIn 0.7s ease-out forwards;
+      }
+      @keyframes slideUpFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+       /* Additional specific dark mode styles if needed */
+      .dark body {
+        /* Example: slightly different default text for dark mode if not handled by utility classes */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.4.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
